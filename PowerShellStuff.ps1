@@ -1,0 +1,1 @@
+Get-Process | ? {$_.Name -like "Sent*"} | Select ProcessName, Description, Path, StartTime, Handles, Threads, @{Name="ElapsedTime";Expression={((Get-Date) - ($_.StartTime))}}
